@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- With destructuring: -->
+    <script>
+      const team = ["Argentina", "Brazil", "Germany"];
+
+      // const a = team[0];
+      // const b = team[1];
+      // const c = team[2];
+
+      const [a, b, c] = team;
+
+      console.log(a, b, c);
+      document.write(a, b, c+ "<br>");
+    </script>
+
+    <!-- Destructuring comes in handy when a function returns an array: -->
+
+    <script>
+      function cal(a, b) {
+        const add = a + b + "<br>";
+        const subtract = a - b + "<br>";
+        const multiply = a * b + "<br>";
+        const divide = a / b + "<br>";
+        return [add,subtract,multiply,divide];
+      }
+
+      const [p,q,r,s] = cal(15,20);
+      document.write(p, q, r, s);
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Function</title>
+  </head>
+  <body>
+    <script>
+      // Normal Function
+      function Hello() {
+        document.write("Hello from Normal Function <br> ");
+      }
+
+      Hello();
+
+      //   Annonymous Function
+
+      var Annonymous = function () {
+        document.write("Hello from Annonymous Function <br>");
+      };
+
+      Annonymous();
+
+
+      // Arrow Function
+      let arrowFunction = (name, address) => {
+        document.write("Hello, " + name + address + " from Arrow Function <br>");
+      };
+
+      arrowFunction("Sajedul! ", " Dhaka");
+
+    //   Alternative Function 
+    let arrowFunction1 = name => {
+        document.write("Hello, " + name + " from Arrow Function <br>");
+      };
+
+      arrowFunction1("Rahim");
+
+    // Arrow Functions Return Value by Default:
+        hello = () => "Hello World! Arrow Functions Return Value ";
+        document.write(hello());
+
+    </script>
+  </body>
+</html>

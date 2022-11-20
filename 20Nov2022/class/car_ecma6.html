@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Car {
+        constructor(name, color, price) {
+          this.brand = name;
+          this.color = color;
+          this.price = price;
+        }
+
+        // Method in Classes
+        present() {
+          return "I have a " + this.brand;
+        }
+      }
+
+      const obj = new Car("Toyota", "Blue", 150000);
+      document.write(obj.brand);
+      document.write("<br>");
+
+      document.write(obj.color);
+      document.write("<br>");
+
+      document.write(obj.price);
+      document.write("<br>");
+
+      document.write(obj.present());
+    </script>
+  </body>
+</html>

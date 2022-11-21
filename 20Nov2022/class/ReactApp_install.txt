@@ -4,8 +4,7 @@
 
 2. https://www.npmjs.com/package/dateformat
 
-	npm i dateformat --save
-// --save for auto save and depandancy
+	npm i dateformat --save     // --save for auto save and depandancy
 
 
 // uninstall node modules
@@ -13,3 +12,19 @@
 
 3. // bootstrap
 	npm install bootstrap@3 --save
+
+4. // create new app in react
+	npx create-react-app reactapp1
+	
+// change Directory
+	cd reactapp1
+
+// npm react app run
+	npm start
+
+//uninstall app 
+	npm uninstall -g create-react-app
+
+// node -v
+// npm -v
+

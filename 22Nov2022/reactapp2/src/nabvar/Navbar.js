@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Content from "../pages/Content";
 
 
 function Navbar() {
@@ -11,7 +10,15 @@ function Navbar() {
                         <Link to="/" class="nav-link active" > Home </Link> 
                     </li>
                     <li class="nav-item">
-                       
+                        <Link to="/About" class="nav-link" > About </Link> 
+                    </li>
+
+                    <li class="nav-item">
+                        <Link to="/Contact" class="nav-link" > Contact </Link> 
+                    </li>
+
+                    <li class="nav-item">
+                        <Link to="/Garage" class="nav-link" > Garage </Link> 
                     </li>
                     
 

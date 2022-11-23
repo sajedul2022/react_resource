@@ -1,15 +1,15 @@
 import './App.css';
+import { Outlet } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './header/Header';
 import Navbar from './nabvar/Navbar';
-import Content from './content/Content';
 import Footer from './footer/Footer';
 import Sidebar from './sidebar/Sidebar';
 
 function App() {
   return (
     <>
-      <Header brand="Sajedul Tech" slogan="One platform" />
+      <Header brand="Sajedul Tech" slogan=" All IT Based platform" />
 
       <Navbar />
 
@@ -18,7 +18,7 @@ function App() {
 
           <Sidebar />
 
-          <Content />
+          <Outlet />
 
         </div>
       </div>

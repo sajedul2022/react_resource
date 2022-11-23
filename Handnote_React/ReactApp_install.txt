@@ -1,0 +1,33 @@
+1. select cmd
+	npm init
+	enter
+
+2. https://www.npmjs.com/package/dateformat
+
+	npm i dateformat --save     // --save for auto save and depandancy
+
+
+// uninstall node modules
+	npm uninstall date
+
+3. // bootstrap
+	npm install bootstrap@3 --save
+
+4. // create new app in react
+	npx create-react-app reactapp1
+	
+// change Directory
+	cd reactapp1
+
+// npm react app run
+	npm start
+
+//uninstall app 
+	npm uninstall -g create-react-app
+
+// node -v
+// npm -v
+
+**  For Routing
+
+npm i -D react-router-dom

@@ -20,6 +20,21 @@ function Navbar() {
                     <li class="nav-item">
                         <Link to="/Garage" class="nav-link" > Garage </Link> 
                     </li>
+
+                    <li class="nav-item">
+                        <Link to="/Colors" class="nav-link" > Colors </Link> 
+                    </li>
+
+                    <li class="nav-item">
+                        <Link to="/Search" class="nav-link" > Search </Link> 
+                    </li>
+                    <li class="nav-item">
+                        <Link to="/LifeCycle" class="nav-link" > LifeCycle </Link> 
+                    </li>
+                    
+                    <li class="nav-item">
+                        <Link to="/Userlist" class="nav-link" > Userlist </Link> 
+                    </li>
                     
 
                 </ul>

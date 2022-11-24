@@ -9,12 +9,15 @@
 
 // uninstall node modules
 	npm uninstall date
+// node -v
+// npm -v
+--------------------------------------------------------------
 
-3. // bootstrap
-	npm install bootstrap@3 --save
-
-4. // create new app in react
+1. // create new app in react
 	npx create-react-app reactapp1
+
+//uninstall app 
+	npm uninstall -g create-react-app
 	
 // change Directory
 	cd reactapp1
@@ -22,14 +25,22 @@
 // npm react app run
 	npm start
 
-//uninstall app 
-	npm uninstall -g create-react-app
 
-// node -v
-// npm -v
 
-**  For Routing
+2. // bootstrap
+	npm install bootstrap@3 --save
+
+
+3.  For Routing
 
 npm i -D react-router-dom
+
+4. command line - create  component
+
+	npx generate-react-cli     // setup bundle
+
+	npx generate-react-cli component colors   // create component
+
+
 
 

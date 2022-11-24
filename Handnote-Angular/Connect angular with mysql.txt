@@ -1,0 +1,55 @@
+1) Api folder ante hbe
+2) service banate hbe   ng g s services\pricelist
+3) new file product.ts  src-> app  (structre bananor jonno)
+and ai interface banate hbe
+export interface Product{
+    id?: number;
+    name?: string;
+    price?: number;
+}
+
+4)pricelist.service.ts a  import banate  hbe product & httpCLient
+import{ Product } from '../product';
+import{ HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+
+5) constructor a  add korte hbe 
+constructor(private httpClient:HttpClient) { }
+
+6) API_PATH toiri korte hbe (pricelist.service.ts a)
+
+7) then readProducts ar baki kaj gula
+
+8) price-list.component.ts a import korte hbe product & PoductService
+import { Product } from '../product';
+import { PricelistService } from '../services/pricelist.service';
+
+9) Niche blank array banay rakhte hbe Product ar price-list.component.ts a
+
+10) app.module.ts a service add korte hbe import a .
+import { PricelistService } from './services/pricelist.service';
+ providers: [PricelistService], a dite hbe
+
+import { HttpClientModule } from '@angular/common/http';
+and atar HttpClientModule  imports a dite hbe.
+
+11)price-list.component.html a loop chalate hbe .. 
+
+12) database a connect thakle data asbe,
+
+13) API path ta thik thakte hbe API_PATH = 'http://localhost/Angular_WDPF/Zcar/api/';
+
+######
+
+Build korar way :
+
+1) pricelist.service.ts a  API_ PATH change korte hbe..cz ata build hoy na alada nite hobe ,,, 
+2) build korar por index.html a base url a change korte hbe.
+3) assets folder ta baire dite hbe photo pawar jonno
+4)
+
+
+
+
+

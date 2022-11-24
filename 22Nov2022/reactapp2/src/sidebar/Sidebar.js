@@ -21,6 +21,9 @@ function Sidebar() {
                     <Link to="/Garage" class="nav-link" > Garage </Link>
                 </li>
 
+                <li class="nav-item">
+                    <Link to="/Colors" class="nav-link" > Colors </Link>
+                </li>
 
             </ul>
         </div>

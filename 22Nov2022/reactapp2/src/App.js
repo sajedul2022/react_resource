@@ -9,7 +9,7 @@ import Sidebar from './sidebar/Sidebar';
 function App() {
   return (
     <>
-      <Header brand="Sajedul Tech" slogan=" All IT Based platform" />
+      <Header brand="Sajedul Tech" slogan=" IT Based platform" />
 
       <Navbar />
 

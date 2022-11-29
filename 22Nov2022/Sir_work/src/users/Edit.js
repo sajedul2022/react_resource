@@ -9,7 +9,7 @@ const Edit = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    edituserlist(params.ids);
+    edituserlist(params.uid);
   }, []);
 
   const [isuser, setuser] = useState([]);
@@ -24,7 +24,7 @@ const Edit = () => {
           }
         )
         .then((res) => {
-          console.log(res.data.userlist.userdata);
+          console.log(res.data.userlist.userdata[0]);
           setuser(res.data.userlist.userdata[0]);
           setloaduser(true);
         });

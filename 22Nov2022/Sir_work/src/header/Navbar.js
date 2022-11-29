@@ -35,19 +35,16 @@ function Navbar() {
               LifeCycle
             </Link>
           </li>
-
           <li className="nav-item">
             <Link to="/users" className="nav-link">
               User List
             </Link>
           </li>
-
           <li className="nav-item">
-            <Link to="/AllProducts" className="nav-link">
-            AllProducts
+            <Link to="/products" className="nav-link">
+              Products
             </Link>
           </li>
-
         </ul>
       </div>
     </nav>

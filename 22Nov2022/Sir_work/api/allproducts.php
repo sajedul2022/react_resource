@@ -1,22 +1,17 @@
-<?php 
-    include('db_connection.php');
+<?php
+include('db_connection.php');
 
-    $sql = "SELECT * FROM products";
+$sql = "SELECT * FROM products";
+$result = mysqli_query($db_conn, $sql);
 
-    $result = mysqli_query($db_conn, $sql);
+while ($row = mysqli_fetch_assoc($result)) {
+    $products['id'] = $row['id'];
+    $products['name'] = $row['name'];
+    $products['details'] = $row['details'];
+    $products['image'] = $row['image'];
+    $products['price'] = $row['price'];
 
-    while($row = mysqli_fetch_assoc($result)){
-        $products['id'] = $row['id'];
-        $products['name'] = $row['name'];
-        $products['details'] = $row['details'];
-        $products['image'] = $row['image'];
-        $products['price'] = $row['price'];
+    $myproducts['pr'][] = $products;
+}
 
-        $myproducts['pr'][] = $products;
-    }
-
-    // print_r($myproducts);
-    echo json_encode(['success' => 'Yes','datas'=> $myproducts]);
-
-?>
-
+echo json_encode(['success' => "Yes", 'datas' => $myproducts]);

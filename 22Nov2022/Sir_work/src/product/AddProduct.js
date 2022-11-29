@@ -2,78 +2,76 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-
 const AddProduct = () => {
+  const navigate = useNavigate();
+  const [prodinfo, prodinfSet] = useState({
+    name: "",
+    details: "",
+    price: "",
+  });
 
-    const navigate = useNavigate();
+  //console.log(prodinfo);
 
-    const [prodInfo, prodInfoSet] = useState({
-        name: "",
-        details: "",
-        price: "",
-    });
+  const onChangeValue = (e) => {
+    prodinfSet({ ...prodinfo, [e.target.name]: e.target.value });
+  };
 
-    // console.log(prodInfo);
+  const SubmitValue = async (e) => {
+    //alert("Submitted");
+    e.preventDefault();
+    e.persist();
+    axios
+      .post(
+        "http://localhost/wdpf51_reactjs/22nov2022/reactapp2/api/addproduct.php",
+        {
+          pname: prodinfo.name,
+          pdetails: prodinfo.details,
+          pprice: prodinfo.price,
+        }
+      )
+      .then((result) => {
+        alert(result.data.msg);
+        navigate("/products");
+      });
+  };
 
-    const onChangeValue = (e) => {
-        prodInfoSet({ ...prodInfo, [e.target.name]: e.target.value });
-    }
-
-    const SubmitValue = async (e) => {
-        // alert("Submitted")
-        e.preventDefault();
-        e.persist();
-
-
-        axios.post(
-            `http://localhost/wdpf51_reactjs/22nov2022/reactapp2/api/addproduct.php`,
-            {
-                pname: prodInfo.name,
-                pdetails: prodInfo.details,
-                pprice: prodInfo.price
-            }).then(
-                (res) => {
-                    alert(res.data.msg);
-                    navigate("/AllProducts");
-                }
-            );
-    }
-
-
-
-    return (
-
-        <div className="col-sm-8">
-            <h1>Create New Product</h1>
-
-            <form onSubmit={SubmitValue}>
-
-                <div className="form-group">
-                    <label>Product Name</label>
-                    <input type="text" name="name" className="form-control" aria-describedby="emailHelp" placeholder="Enter Product Name" onChange={onChangeValue} />
-
-                </div> <br></br>
-
-                <div className="form-group">
-                    <label >Product Details</label>
-                    <textarea name="details" className="form-control" placeholder="Enter Product Details" onChange={onChangeValue} >
-                    </textarea>
-                </div> <br></br>
-
-
-                <div className="form-group">
-                    <label >Price</label>
-                    <input type="text" name="price" className="form-control" placeholder="Enter Product Price" onChange={onChangeValue} />
-                </div>  <br></br>
-
-                <button type="submit" className="btn btn-primary">Create New</button>
-            </form>
+  return (
+    <div className="col-sm-8">
+      <h1>Product Entry Form</h1>
+      <form onSubmit={SubmitValue}>
+        <div className="form-group">
+          <label>Product Name</label>
+          <input
+            type="text"
+            name="name"
+            onChange={onChangeValue}
+            className="form-control"
+          />
         </div>
-
-    )
-}
+        <div className="form-group">
+          <label>Product Details</label>
+          <textarea
+            className="form-control"
+            name="details"
+            onChange={onChangeValue}
+            type="text"
+          ></textarea>
+        </div>
+        <div className="form-group">
+          <label>Product Price</label>
+          <input
+            type="text"
+            className="form-control"
+            onChange={onChangeValue}
+            name="price"
+          />
+        </div>
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
+      </form>
+    </div>
+  );
+};
 
 export default AddProduct;
-
-
-

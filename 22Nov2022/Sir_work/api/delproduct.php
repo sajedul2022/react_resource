@@ -1,24 +1,16 @@
-<?php 
-    include('db_connection.php');
-
-    $data = file_get_contents("php://input");
-    $data = json_decode($data);
-
-    $id = $data->prodId;
+<?php
+include('db_connection.php');
 
 
-    $sql = "DELETE FROM products WHERE id = '$id' ";
-    $result = mysqli_query($db_conn, $sql);
+$data = file_get_contents("php://input");
 
-    if($result){
-        echo json_encode(["msg" => "Successfully Delete Product"]);
-    }
+$data = json_decode($data);
+
+$id = $data->prodid;
 
 
-    
+$result =  mysqli_query($db_conn, "DELETE from products WHERE id = '$id'");
 
-   
- 
-
-?>
-
+if ($result) {
+    echo json_encode(["msg" => "Successfully Deleted Product"]);
+}

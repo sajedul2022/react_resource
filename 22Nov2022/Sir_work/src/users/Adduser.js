@@ -27,13 +27,11 @@ const Adduser = () => {
             userpass: userInfo.password,
           }
         )
-        .then(
-          (res) => {
-            console.log(res.data);
-            navigate(`/users`);
-            return;
-          }
-        );
+        .then((res) => {
+          console.log(res.data);
+          navigate(`/users`);
+          return;
+        });
     } catch (error) {
       throw error;
     }

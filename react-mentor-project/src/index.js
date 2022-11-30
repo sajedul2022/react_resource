@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/Home';
 import About from './pages/About';
+import AllCourses from './pages/AllCourses';
 
 
 export default function RouterApp() {
@@ -15,6 +16,7 @@ export default function RouterApp() {
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="About" element={<About />} />
+          <Route path="AllCourses" element={<AllCourses />} />
 
           {/* <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NoPage />} /> */}
@@ -26,11 +28,7 @@ export default function RouterApp() {
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <RouterApp />
-  </React.StrictMode>
-);
+root.render(<RouterApp />);
 
 
 reportWebVitals();

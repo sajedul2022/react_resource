@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
     function Header() {
         return (
 
@@ -15,16 +16,16 @@ import { Link } from "react-router-dom";
               <ul>
                 <li><Link  to="/">Home</Link></li>
                 <li><Link to="/About">About</Link></li>
-                <li><Link to="/">Courses</Link></li>
-                <li><Link to="/">Trainers</Link></li>
+                <li><Link to="/AllCourses">Courses</Link></li>
+                {/* <li><Link to="/">Trainers</Link></li>
                 <li><Link to="/">Events</Link></li>
                 <li><Link to="/">Pricing</Link></li>
-                <li><Link to="/">Contact</Link></li>
+                <li><Link to="/">Contact</Link></li> */}
               </ul>
               <i className="bi bi-list mobile-nav-toggle"></i>
             </nav>
           
-            <Link to="/" className="get-started-btn">Get Started</Link>
+            {/* <Link to="/" className="get-started-btn">Get Started</Link> */}
           
           </div>
           </header>

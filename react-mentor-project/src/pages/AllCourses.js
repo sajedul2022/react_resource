@@ -13,8 +13,8 @@ const AllCourses = () => {
   const allprod = async () => {
     axios
       .get(
-        // "http://localhost/wdpf-51/me/f_s_w_d/react/react-mentor-project/api/courses/allcourses.php"
-        "http://localhost/React/react_resource/react-mentor-project/api/courses/allcourses.php"
+        "http://localhost/wdpf-51/me/f_s_w_d/react/react-mentor-project/api/courses/allcourses.php"
+        // "http://localhost/React/react_resource/react-mentor-project/api/courses/allcourses.php"
       )
       .then((res) => {
         setProduct(res.data.datas.pr);
@@ -28,8 +28,8 @@ const AllCourses = () => {
     const delprod = async (id) => {
       axios
         .post(
-          // "http://localhost/wdpf51_reactjs/22nov2022/reactapp2/api/delproduct.php",
-          "http://localhost/React/react_resource/react-mentor-project/api/courses/delproduct.php",
+          "http://localhost/wdpf-51/me/f_s_w_d/react/react-mentor-project/api/courses/delproduct.php",
+          // "http://localhost/React/react_resource/react-mentor-project/api/courses/delproduct.php",
           {
             prodid: id,
           }
@@ -57,7 +57,7 @@ const AllCourses = () => {
                 <th>Details</th>
                 <th>Price</th>
                 {/* <th>Edit</th> */}
-                <th>Delete</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -82,7 +82,7 @@ const AllCourses = () => {
               ))}
             </tbody>
           </table>
-          <Link to="/products/add" className="btn btn-primary">
+          <Link to="/AddCourses/add" className="btn btn-primary">
           Add new product
           </Link>
         </div>

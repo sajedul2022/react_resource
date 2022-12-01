@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import Home from './pages/Home';
 import About from './pages/About';
 import AllCourses from './pages/AllCourses';
+import AddCourses from './pages/AddCourses';
 import Contact from './pages/Contact';
 
 
@@ -19,6 +20,8 @@ export default function RouterApp() {
           <Route path="About" element={<About />} />
           <Route path="AllCourses" element={<AllCourses />} />
           <Route path="Contact" element={<Contact />} />
+          <Route path="/AddCourses/add" element={<AddCourses />} />
+
           
         </Route>
       </Routes>

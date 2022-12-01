@@ -22,7 +22,7 @@ const AddCourses = () => {
     e.persist();
     axios
       .post(
-        "http://localhost/wdpf51_reactjs/22nov2022/reactapp2/api/addproduct.php",
+        "http://localhost/wdpf-51/me/f_s_w_d/react/react-mentor-project/api/courses/addproduct.php",
         {
           pname: prodinfo.name,
           pdetails: prodinfo.details,
@@ -31,47 +31,59 @@ const AddCourses = () => {
       )
       .then((result) => {
         alert(result.data.msg);
-        navigate("/products");
+        navigate("/AllCourses");
       });
   };
 
   return (
-    <div className="col-sm-8">
-      <h1>Product Entry Form</h1>
-      <form onSubmit={SubmitValue}>
-        <div className="form-group">
-          <label>Product Name</label>
-          <input
-            type="text"
-            name="name"
-            onChange={onChangeValue}
-            className="form-control"
-          />
+    <>
+      <section id="popular-courses" className="courses">
+        <div className="container" data-aos="fade-up">
+          <div className="section-title">
+            <h1>Course Entry Form</h1>
+
+            <form onSubmit={SubmitValue}>
+              <div className="form-group">
+                <label>Course Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  onChange={onChangeValue}
+                  className="form-control"
+                />
+              </div>
+              <div className="form-group">
+                <label>Course Details</label>
+                <textarea
+                  className="form-control"
+                  name="details"
+                  onChange={onChangeValue}
+                  type="text"
+                ></textarea>
+              </div>
+              <div className="form-group">
+                <label>Course Price</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  onChange={onChangeValue}
+                  name="price"
+                />
+              </div>
+              <button type="submit" className="btn btn-primary">
+                Add
+              </button>
+            </form>
+          </div>
         </div>
-        <div className="form-group">
-          <label>Product Details</label>
-          <textarea
-            className="form-control"
-            name="details"
-            onChange={onChangeValue}
-            type="text"
-          ></textarea>
-        </div>
-        <div className="form-group">
-          <label>Product Price</label>
-          <input
-            type="text"
-            className="form-control"
-            onChange={onChangeValue}
-            name="price"
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
-      </form>
-    </div>
+
+      </section>
+    </>
+
+
   );
 };
 
 export default AddCourses;
+
+

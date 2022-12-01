@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const AllCourses = () => {
-    
   const [product, setProduct] = useState([]);
 
   console.log(product);
@@ -14,71 +13,81 @@ const AllCourses = () => {
   const allprod = async () => {
     axios
       .get(
-        "http://localhost/wdpf-51/me/f_s_w_d/react/react-mentor-project/api/courses/allcourses.php"
+        // "http://localhost/wdpf-51/me/f_s_w_d/react/react-mentor-project/api/courses/allcourses.php"
+        "http://localhost/React/react_resource/react-mentor-project/api/courses/allcourses.php"
       )
       .then((res) => {
         setProduct(res.data.datas.pr);
       });
   };
 
-//   const delconfirm = (id) => {
-//     delprod(id);
-//   };
+    const delconfirm = (id) => {
+      delprod(id);
+    };
 
-//   const delprod = async (id) => {
-//     axios
-//       .post(
-//         "http://localhost/wdpf51_reactjs/22nov2022/reactapp2/api/delproduct.php",
-//         {
-//           prodid: id,
-//         }
-//       )
-//       .then((res) => {
-//         alert(res.data.msg);
-//         allprod();
-//       });
-//   };
+    const delprod = async (id) => {
+      axios
+        .post(
+          // "http://localhost/wdpf51_reactjs/22nov2022/reactapp2/api/delproduct.php",
+          "http://localhost/React/react_resource/react-mentor-project/api/courses/delproduct.php",
+          {
+            prodid: id,
+          }
+        )
+        .then((res) => {
+          alert(res.data.msg);
+          allprod();
+        });
+    };
 
   return (
-    <div className="col-sm-8">
-      <h2 className="bg-dark text-light">All Products</h2>
-      <br></br>
-      <br></br>
-      <br></br>
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Details</th>
-            <th>Price</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {product.map((item, index) => (
-            <tr key={item.id}>
-              <td>{index + 1}</td>
-              <td>{item.name}</td>
-              <td>{item.details}</td>
-              <td>{item.price}</td>
-              <td>
-                {/* <Link
+    <>
+      <section id="popular-courses" class="courses">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Courses</h2>
+            <p>Popular Courses</p>
+          </div>
+          {/* <h2 className="bg-dark text-light">List Courses</h2> */}
+          <table className="table table-striped table-bordered table-hover">
+            <thead className="table-primary">
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Details</th>
+                <th>Price</th>
+                {/* <th>Edit</th> */}
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              {product.map((item, index) => (
+                <tr key={item.id}>
+                  <td>{index + 1}</td>
+                  <td>{item.name}</td>
+                  <td>{item.details}</td>
+                  <td>{item.price}</td>
+                  {/* <td> */}
+                    {/* <Link
                   to={`/products/edit/${item.id}`}
                   className="btn btn-primary"
                 > */}
-                  Edit
-                {/* </Link> */}
-                {/* <button onClick={() => delconfirm(item.id)}>Delete</button> */}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      {/* <Link to="/products/add" className="btn btn-secondary"> */}
-        Add new product
-      {/* </Link> */}
-    </div>
+                    {/* Edit */}
+                    {/* </Link> */}
+                  {/* </td> */}
+                  <td>
+                    <button className="btn btn-danger" onClick={() => delconfirm(item.id)}>Delete</button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <Link to="/products/add" className="btn btn-primary">
+          Add new product
+          </Link>
+        </div>
+      </section>
+    </>
   );
 };
 

@@ -7,14 +7,14 @@ function Footer() {
             <div className="col-lg-3 col-md-6 footer-contact">
               <h3>Mentor</h3>
               <p>
-                A108 Adam Street <br />
-                New York, NY 535022
+                H#1123 Dhanmondi, <br />
+                Dhaka, 1130 
                 <br />
-                United States <br />
+                Bangladesh <br />
                 <br />
                 <strong>Phone:</strong> +1 5589 55488 55
                 <br />
-                <strong>Email:</strong> info@example.com
+                <strong>Email:</strong> info@mentor.com
                 <br />
               </p>
             </div>
@@ -23,14 +23,14 @@ function Footer() {
             <div className="col-lg-3 col-md-6 footer-contact">
               <h3>Consult</h3>
               <p>
-                A108 Adam Street <br />
-                New York, NY 535022
+                H#1123 Dhanmondi, <br />
+                Dhaka, 1130 
                 <br />
-                United States <br />
+                Bangladesh <br />
                 <br />
                 <strong>Phone:</strong> +1 5589 55488 55
                 <br />
-                <strong>Email:</strong> info@example.com
+                <strong>Email:</strong> info@mentor.com
                 <br />
               </p>
             </div>
@@ -38,14 +38,14 @@ function Footer() {
             <div className="col-lg-3 col-md-6 footer-contact">
               <h3>Breffing</h3>
               <p>
-                A108 Adam Street <br />
-                New York, NY 535022
+                H#1123 Dhanmondi, <br />
+                Dhaka, 1130 
                 <br />
-                United States <br />
+                Bangladesh <br />
                 <br />
                 <strong>Phone:</strong> +1 5589 55488 55
                 <br />
-                <strong>Email:</strong> info@example.com
+                <strong>Email:</strong> info@mentor.com
                 <br />
               </p>
             </div>
@@ -53,14 +53,14 @@ function Footer() {
             <div className="col-lg-3 col-md-6 footer-contact">
               <h3>Notice</h3>
               <p>
-                A108 Adam Street <br />
-                New York, NY 535022
+                H#1123 Dhanmondi, <br />
+                Dhaka, 1130 
                 <br />
-                United States <br />
+                Bangladesh <br />
                 <br />
                 <strong>Phone:</strong> +1 5589 55488 55
                 <br />
-                <strong>Email:</strong> info@example.com
+                <strong>Email:</strong> info@mentor.com
                 <br />
               </p>
             </div>

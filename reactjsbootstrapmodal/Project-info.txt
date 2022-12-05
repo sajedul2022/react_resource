@@ -1,0 +1,16 @@
+https://appdividend.com/2022/03/12/react-bootstrap-modal/
+
+1. Install React js Project
+	npx create-react-app reactjsbootstrapmodal
+
+2. bootstrap.
+	npm i bootstrap
+
+3. For Modal pakage
+ 	npm i reactstrap
+
+4.npm start
+
+5. for database send data
+	npm i axios
+

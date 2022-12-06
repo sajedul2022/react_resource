@@ -15,7 +15,7 @@ const AllProducts = () => {
 
 //  View product
     const allprod = async () => {
-        axios.get('http://localhost/wdpf51_reactjs/22nov2022/reactapp2/api/allproducts.php')
+        axios.get('http://localhost/react_resource/22Nov2022/Sir_work/api/allproducts.php')
             .then((res) => {
                 setProduct(res.data.datas.pr)
             })
@@ -31,7 +31,7 @@ const AllProducts = () => {
 
     const delprod = async (id) => {
         axios.post(
-            'http://localhost/wdpf51_reactjs/22nov2022/reactapp2/api/delproduct.php',
+            'http://localhost/react_resource/22Nov2022/Sir_work/api/delproduct.php',
             {prodId: id}
             
             )

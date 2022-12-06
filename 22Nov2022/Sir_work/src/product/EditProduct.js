@@ -29,7 +29,7 @@ const EditProduct = () => {
   const productsubmit = () =>
     axios
       .post(
-        "http://localhost/wdpf51_reactjs/22nov2022/reactapp2/api/updateproduct.php",
+        "http://localhost/react_resource/22Nov2022/Sir_work/api/updateproduct.php",
         { prid: product.id, prname: product.name, prdetails: product.details, prprice:product.price }
       )
       .then((res) => {
@@ -45,7 +45,7 @@ const EditProduct = () => {
   const productone = (id) =>
     axios
       .post(
-        "http://localhost/wdpf51_reactjs/22nov2022/reactapp2/api/getproduct.php",
+        "http://localhost/react_resource/22Nov2022/Sir_work/api/getproduct.php",
         { prid: id }
       )
       .then((res) => {

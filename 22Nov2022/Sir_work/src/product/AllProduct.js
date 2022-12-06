@@ -5,15 +5,28 @@ import { Link } from "react-router-dom";
 const AllProduct = () => {
   const [product, setProduct] = useState([]);
 
-  console.log(product);
+  // search
+  const [searchTerm, setSearchTerm] = useState("");
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
+  const searchedProduct = product.filter((pr) =>
+    pr.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    pr.details.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    pr.price.toLowerCase().includes(searchTerm.toLowerCase())
+    
+  );
+  
+
+  console.log(product);
   useEffect(() => {
     allprod();
   }, []);
   const allprod = async () => {
     axios
       .get(
-        "http://localhost/wdpf51_reactjs/22nov2022/reactapp2/api/allproducts.php"
+        "http://localhost/react_resource/22Nov2022/Sir_work/api/allproducts.php"
       )
       .then((res) => {
         setProduct(res.data.datas.pr);
@@ -27,7 +40,7 @@ const AllProduct = () => {
   const delprod = async (id) => {
     axios
       .post(
-        "http://localhost/wdpf51_reactjs/22nov2022/reactapp2/api/delproduct.php",
+        "http://localhost/react_resource/22Nov2022/Sir_work/api/delproduct.php",
         {
           prodid: id,
         }
@@ -41,6 +54,8 @@ const AllProduct = () => {
   return (
     <div className="col-sm-8">
       <h2 className="bg-dark text-light">All Products</h2>
+      <label>Search</label>
+      <input type="text" name="searchTerm" onChange={handleSearch} />
       <table className="table table-striped">
         <thead>
           <tr>
@@ -52,7 +67,7 @@ const AllProduct = () => {
           </tr>
         </thead>
         <tbody>
-          {product.map((item, index) => (
+          {searchedProduct.map((item, index) => (
             <tr key={item.id}>
               <td>{index + 1}</td>
               <td>{item.name}</td>

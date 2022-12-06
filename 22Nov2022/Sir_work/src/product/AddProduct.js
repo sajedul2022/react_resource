@@ -22,7 +22,7 @@ const AddProduct = () => {
     e.persist();
     axios
       .post(
-        "http://localhost/wdpf51_reactjs/22nov2022/reactapp2/api/addproduct.php",
+        "http://localhost/react_resource/22Nov2022/Sir_work/api/addproduct.php",
         {
           pname: prodinfo.name,
           pdetails: prodinfo.details,

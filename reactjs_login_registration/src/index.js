@@ -8,6 +8,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './Components/Home';
 import Login from './Components/Login';
 import Register from './Components/Register';
+import Dashboard from './Components/Dashboard';
+import Logout from './Components/Logout';
 
 
 
@@ -20,6 +22,8 @@ export default function RouterApp() {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registration" element={<Register />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/logout" element={<Logout />} />
           
         </Route>
       </Routes>

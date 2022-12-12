@@ -1,7 +1,29 @@
-import React from 'react'
+import '../App.css';
 
-export default function ProductList() {
-  return (
-    <div>ProductList</div>
-  )
+function ProductList({ product,addToCart }) {
+
+   
+    return (
+        <div className='flex'>
+            {
+                product.map((productItem, productIndex) => {
+                    return (
+                        <div style={{ width: '33%' }}>
+                            <div className='product-item'>
+                                <img src={productItem.image} width="100%" />
+                                <p>{productItem.name} | {productItem.category} </p>
+                                <p> {productItem.seller} </p>
+                                <p> BDT  {productItem.price} /-</p>
+                                <button
+                                    onClick={() => addToCart(productItem)}
+                                >Add To Cart</button>
+                            </div>
+                        </div>
+                    )
+                })
+            }
+        </div>
+    )
 }
+
+export default ProductList

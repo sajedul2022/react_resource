@@ -41,6 +41,11 @@ npm i -D react-router-dom
 
 	npx generate-react-cli component colors   // create component
 
+--------------------- Visual Code studio ----
+
+rfc // function
+rcc // class
+
 
 
 

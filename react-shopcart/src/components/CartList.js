@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import '../App.css';
 
@@ -7,7 +8,23 @@ function CartList({ cart }) {
 
     useEffect(() => {
         setCART(cart)
-    }, [cart])
+    }, [cart]);
+
+    //cart to database
+
+    let user_id = 100;
+    console.log(CART);
+
+    const orderHandle = ()=>{
+        axios.post("http://localhost/react_resource/react-shopcart/api/cart/order.php", {
+            items:CART,
+            user: user_id
+        })
+        .then((response)=>{
+            alert(response.data);
+            // console.log(response.data);
+        })
+    }
 
     return (
         <div>
@@ -45,6 +62,7 @@ function CartList({ cart }) {
                     CART.map(item => item.price * item.quantity).reduce((total, value) => total + value, 0)
                 }
             </p>
+            <button onClick={orderHandle} > Order </button>
         </div >
     )
 }

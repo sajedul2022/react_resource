@@ -4,10 +4,20 @@ import { useNavigate } from "react-router-dom";
 export default function Dashboard() {
 
   let navigate = useNavigate();
-  
-  // Not entry Dashboard
-  
+  // session clear
+  const logout = () => {
+    sessionStorage.clear();
+    navigate("/login");
+  };
 
+  // Not entry Dashboard
+  let fullname = sessionStorage.getItem("fullname");
+  let setEmail = sessionStorage.getItem("email");
+  useEffect(() => {
+    if (setEmail == null) {
+      navigate("/login");
+    }
+  }, []);
   return (
     <>
       <div className="container">

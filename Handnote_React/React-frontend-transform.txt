@@ -36,4 +36,4 @@ React template transform from Bootstrap Step by Step:
 
     14)img ter kono end na thakle dite hbe..
     style thakle avabe change korte hbe
-    style {{color:"red"}}
+    style = {{color:"red"}}

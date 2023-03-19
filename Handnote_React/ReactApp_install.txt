@@ -49,3 +49,24 @@ rcc // class
 
 
 
+=== CSS ===
+
+
+
+Inline style to set any image full screen:
+
+style={{  
+  backgroundImage: "url(" + "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" + ")",
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat'
+}}
+
+
+
+Inline style to set any image full screen:
+
+style={{  
+  backgroundImage: "url(" + "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" + ")",
+  
+}}

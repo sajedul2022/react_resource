@@ -1,0 +1,39 @@
+React template transform from Bootstrap Step by Step:
+
+
+    1)after creat react app, remove unnecesary code from app.js
+
+    2)create 2 folders , components & pages
+
+    3)pages a necessary file bante hbe
+
+    4) npm i react-router-dom ata install korte hbe
+
+    5) index.js a import korte hbe
+    import { BrowserRouter } from "react-router-dom";
+
+    6)niche dite hbe
+    <BrowserRouter>
+    </BrowserRouter>
+
+    7)App.js  a import korte hbe
+    import { Routes, Route } from "react-router-dom";
+
+    8) Niche routes ante hbe
+
+    9)body part ta ante hbe amadr banano index.html a
+
+    10)r css part and nicher js part nite hbe index html a public ar
+
+    11)href="css
+    href="assets/css
+
+    12)href="images
+    href="assets/images
+
+    13)src="js
+    src="assets/js
+
+    14)img ter kono end na thakle dite hbe..
+    style thakle avabe change korte hbe
+    style = {{color:"red"}}

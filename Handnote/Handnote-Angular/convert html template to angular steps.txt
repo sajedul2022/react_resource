@@ -1,0 +1,16 @@
+1) ng new kore notun project korte hbe ..
+2) html template project a rakhte hbe
+3) ng g c home , ba joto gula component drkr banate hbe
+4) bootstrape gula check korte hbe 
+*****ata angular kaj korar way index.html->app component.html run kore 
+5)html ar index.html copy kore app component.html a dite hbe
+6) css , bootstrape pay na.. agula src ar vitore assets ar moddhe dite hbe, then path change kore dite hbe
+7) boostrape connect na hole npm install bootstrap@4.5.2 ba j kono ta dite hbe and angular json folder a linka add korte hbe .
+8)app component.html ar header part and footer part gula index.html a header css and footer a dhukate hbe
+9) then bootstrape gula link koray dite hbe , and ctrl + u diye check korte dekhte hbe pay ki na .
+10) nav sese <router-outlet></router-outlet> hbe
+11) home component kete nite hbe .. upor theke footer ar ag obdi kete niye home component.html a dite hbe
+12)app routing module.ts a routes add korte hbe.. 
+13)app component.html a ul lia routerLink add korte hbe
+14) app routing module.ts a abar route add korte hbe
+15) css file gula angular.json a dhukate hbe syles ar under a 

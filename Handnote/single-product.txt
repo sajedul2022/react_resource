@@ -1,0 +1,211 @@
+
+1. react router
+	<Route path="/single-project/:id" element={<SingleProject />} /> 
+	
+2.  main page link  where redirect Single product Page
+
+	<Link to={`/single-project/${item.id}`} >  {item.name} </Link>
+	
+	
+2.2 Api create in laravel 
+
+
+api.php
+Route::get('/single_project/{id}', [ProjectController::class, 'single_project']);
+
+controller:
+
+public function single_project($id)
+    {
+
+        $single_project = Project::where('id', '=', $id)
+            ->get();
+
+        return response()->json($single_project);
+    }
+	
+	
+
+	
+3. create single page with id
+
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Carousel from "react-bootstrap/Carousel";
+import Accordion from "react-bootstrap/Accordion";
+import { useNavigate, useParams } from "react-router-dom";
+import { API_PATH, MAIN_PATH } from "../API_PATH";
+
+
+
+export default function SingleProject() {
+
+
+let params = useParams();
+  let navigate = useNavigate();
+
+  const [getuserdata, setUserdata] = useState([]);
+  console.log(getuserdata);
+
+  const getdata = async (id) => {
+    const res = await fetch(`${API_PATH}/single_project/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await res.json();
+    console.log(data);
+
+    if (res.status === 422 || !data) {
+      console.log("error ");
+    } else {
+      setUserdata(data);
+      console.log("get data");
+    }
+  };
+
+  useEffect(() => {
+    getdata(params.id);
+  }, []);
+
+  
+
+
+{getuserdata.map((element, id) => {
+            return (
+              <>
+                <div className="col-sm-5 col-md-5 col-lg-5">
+                  <div>
+                    <div className="sub-paragraph">
+                      <div className="title_module">
+                        <h1>{element.name}</h1>
+                      </div>
+                    </div>
+                    <br />
+                    
+                  </div>
+                </div>
+
+                <div className=" col-sm-6 col-md-6 col-lg-6">
+                  <div className="sub-paragraph"> Projects Images </div>
+                  <div className="">
+                    <Carousel variant="light">
+                      <Carousel.Item>
+                        <img
+                          className="d-block w-100"
+                          // src="assets/images/uploads/4.jpg"
+                          src={`http://127.0.0.1:8000/images/${element.image_01}`}
+                          alt="First slide"
+                        />
+                        {/* <Carousel.Caption>
+                          <h5>First slide label</h5>
+                          <p>
+                            Nulla vitae elit libero, a pharetra augue mollis interdum.
+                          </p>
+                        </Carousel.Caption> */}
+                      </Carousel.Item>
+                      <Carousel.Item>
+                        <img
+                          className="d-block w-100"
+                          // src="assets/images/uploads/2.jpg"
+                          src={`http://127.0.0.1:8000/images/${element.image_02}`}
+                          alt="Second slide"
+                        />
+                        {/* <Carousel.Caption>
+                          <h5>Second slide label</h5>
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                          </p>
+                        </Carousel.Caption> */}
+                      </Carousel.Item>
+
+                      <Carousel.Item>
+                        <img
+                          className="d-block w-100"
+                          // src="assets/images/uploads/3.jpg"
+                          src={`http://127.0.0.1:8000/images/${element.image_03}`}
+                          alt="Third slide"
+                        />
+                        {/* <Carousel.Caption>
+                          <h5>Third slide label</h5>
+                          <p>
+                            Praesent commodo cursus magna, vel scelerisque nisl
+                            consectetur.
+                          </p>
+                        </Carousel.Caption> */}
+                      </Carousel.Item>
+                      <Carousel.Item>
+                        <img
+                          className="d-block w-100"
+                          // src="assets/images/uploads/3.jpg"
+                          src={`http://127.0.0.1:8000/images/${element.image_04}`}
+                          alt="Third slide"
+                        />
+                        {/* <Carousel.Caption>
+                          <h5>Third slide label</h5>
+                          <p>
+                            Praesent commodo cursus magna, vel scelerisque nisl
+                            consectetur.
+                          </p>
+                        </Carousel.Caption> */}
+                      </Carousel.Item>
+
+                      <Carousel.Item>
+                        <img
+                          className="d-block w-100"
+                          // src="assets/images/uploads/3.jpg"
+                          src={`http://127.0.0.1:8000/images/${element.image_05}`}
+                          alt="Third slide"
+                        />
+                        {/* <Carousel.Caption>
+                          <h5>Third slide label</h5>
+                          <p>
+                            Praesent commodo cursus magna, vel scelerisque nisl
+                            consectetur.
+                          </p>
+                        </Carousel.Caption> */}
+                      </Carousel.Item>
+                    </Carousel>
+                  </div>
+                </div>
+              </>
+            );
+          })}
+
+}
+
+====================================================================== others category query with id  from MySQl =====================================
+
+
+api.php: 
+
+Route::get('/design-item/{id}', [ProjectController::class, 'design_item']);
+Route::get('/cat_project/{id}', [ProjectController::class, 'cat_project']);
+
+
+Controller: 
+
+public function design_item($id)
+    {
+        $designTitle = Project::where('cat_id', '=', $id)
+            //    ->join('projects', 'categories.id', '=', 'projects.cat_id')
+            // ->select('categories.id', 'categories.name', 'projects.id', 'projects.cat_id', 'projects.name', 'projects.image_01')
+            ->get();
+        return response()->json($designTitle);
+    }
+
+
+
+    public function cat_project($id)
+    {
+        // dd('ok');
+
+        $cat_project = DB::table('projects')
+            ->select( 'id','name', 'cat_id', 'image_01')
+            ->where('cat_id',$id)
+            ->get();
+
+        return response()->json($cat_project);
+    }

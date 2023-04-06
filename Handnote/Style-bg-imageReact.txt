@@ -61,3 +61,15 @@ import IMAGES from '../images/index.js'
 <div style={{ backgroundImage: `url(${IMAGES.imgFav})`}}> 
 </div>
 
+
+
+ ===== Image =====
+
+<img src={`http://127.0.0.1:8000/images/${element.image}`}  alt={element.title} />
+
+
+
+
+{/* <img src={`${API_PATH}/assets/images/product/${item.thumbnail}`} alt="shope" /> */}
+
+// src={`${MAIN_PATH}/images/${item.logo}`}

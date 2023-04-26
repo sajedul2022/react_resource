@@ -1,0 +1,57 @@
+
+                                ====  Onclick Active class ====
+
+const [active, setActive] = useState(null)
+
+<li
+  key={item.id}
+
+  onClick={() => setActive(item)}
+  className={`list-group-item ${active == item && 'active'}`} 
+>
+
+  {item.name}
+</li>
+
+=== Onclick Show/ hiddden ====
+
+ const [show, setShow] = React.useState();
+
+ <button  onClick={() => setShow(true)}>
+                Show
+  </button>
+
+
+ <div className={`${show ? "hidden" : ""}`}  >
+
+ =========== Menu ============= =========== Active class ==============
+
+import { useLocation } from "react-router-dom";
+
+//assigning location variable
+    const location = useLocation();
+
+//destructuring pathname from location
+    const { pathname } = location;
+
+//Javascript split method to get the name of the path in array
+    const splitLocation = pathname.split("/");
+
+    // return 
+
+className={splitLocation[1] === "" ? "active" : ""}
+
+<li className={splitLocation[1] === "" ? "active" : ""}>
+      <Link to='/'>Home</Link>
+</li>
+
+OR
+
+<NavLink exact activeClassName="active"  to="works">
+  WORKS
+</NavLink>
+
+
+<NavLink  activeClassName="active" to="/news">
+      PRACTICE
+</NavLink>

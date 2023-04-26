@@ -1,0 +1,26 @@
+ ============= Active class ==============
+
+import { useLocation } from "react-router-dom";
+
+//assigning location variable
+    const location = useLocation();
+
+//destructuring pathname from location
+    const { pathname } = location;
+
+//Javascript split method to get the name of the path in array
+    const splitLocation = pathname.split("/");
+
+    // return 
+
+className={splitLocation[1] === "" ? "active" : ""}
+
+<li className={splitLocation[1] === "" ? "active" : ""}>
+      <Link to='/'>Home</Link>
+</li>
+
+OR
+
+<NavLink  activeClassName="active" to="/news">
+      PRACTICE
+</NavLink>

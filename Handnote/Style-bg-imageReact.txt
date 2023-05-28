@@ -5,7 +5,7 @@ background image
 01. style={{backgroundImage: 'url("./assets/images/uploads/1.jpg")'}}
 
 
- 01.              ======== #css: create folder on src > images > nav-arrow.png ========
+01.  ======== #css: create folder on src > images > nav-arrow.png ========
 
 .owl-carousel .owl-nav button.owl-prev span{
 	
@@ -18,6 +18,7 @@ background image
 }
 
 <div className=" owl-prev" >  </div>
+
 
 02.                        =========== ## js ## backgroundImage: `url(${favicon})`  ==============   
 

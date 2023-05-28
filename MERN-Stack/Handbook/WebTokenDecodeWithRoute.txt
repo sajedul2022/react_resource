@@ -1,0 +1,56 @@
+
+// Json WebToken data decode
+
+import jwt_decode from "jwt-decode";
+
+const token = localStorage.getItem("jwtToken");
+const decodedToken = jwt_decode(token);
+const userInfo = decodedToken;
+const Agentcurrency = userInfo.currency;
+console.log(Agentcurrency);
+
+// set data
+
+  const [inpval, setINP] = useState({
+    agentEmail: userInfo.email,
+  });
+
+  const setdata = (e) => {
+    console.log(e.target.value);
+    const { name, value } = e.target;
+    setINP((preval) => {
+      return {
+        ...preval,
+        [name]: value,
+      };
+    });
+  };
+
+
+// hidden field
+	<form>
+                  <input
+                    type="hidden"
+                    class="form-control"
+                    name="agentEmail"
+                    onChange={setdata}
+                    value={userInfo.email}
+                    placeholder="Email"
+                  />
+                </form>
+
+
+// route api page
+
+
+router.get("/user_jwtinfo", (req, res) => {
+
+  const AgentEmail = req.body.agentEmail;
+  
+
+  User.findOne({ email: req.body.agentEmail }, (err, user) => {
+
+    const Agentcurrency = Number(user.currency);
+    console.log(Agentcurrency);
+  });
+});

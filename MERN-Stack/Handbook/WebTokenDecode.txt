@@ -1,0 +1,24 @@
+
+// Json WebToken data decode
+
+import jwt_decode from "jwt-decode";
+
+const token = localStorage.getItem("jwtToken");
+const decodedToken = jwt_decode(token);
+const userInfo = decodedToken;
+const Agentcurrency = userInfo.currency;
+ console.log(Agentcurrency);
+
+
+// Json WebToken data decode 2
+
+import jwt_decode from 'jwt-decode';
+
+const nav = () => {
+
+const token = localStorage.getItem('jwtToken');
+const decodedToken = token ? jwt_decode(token) : null;
+console.log(decodedToken);
+const userRole = decodedToken ? decodedToken.role_as : null;
+
+});

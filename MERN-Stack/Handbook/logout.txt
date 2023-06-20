@@ -1,0 +1,9 @@
+logoutUser() {
+    localStorage.removeItem("jwtToken");
+    window.location.replace("/");
+  }
+
+
+<button className="logout-btn" onClick={this.logoutUser}>
+                    Logout
+   </button>

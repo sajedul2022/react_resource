@@ -1,0 +1,72 @@
+const [currentPage, setCurrentPage] = useState(1);
+  const perPage = 50;
+  const totalCount = 5596;
+  const pageCount = Math.ceil(totalCount / perPage);
+
+  useEffect(() => {
+    fetchData();
+  }, [currentPage]);
+  
+  const fetchData = async () => {
+    try {
+    /// const response = await fetch(`https://wicked-fox-baseball-cap.cyclic.app/api/games/gamelist`);
+    //  const response = await fetch(`/api/games/gamelist`);
+    //   const data = await response.json();
+    //   console.log(data.items);
+    //   setData(data.items);
+    //const response = await axios.get(`/api/games/gamelist`);
+    const response = await axios.get(`/api/games/gamelist?page=${currentPage}`);
+    setData(response.data.items);
+     setPaginationLinks(response.data._links);
+      setIsLoadingReport(false);
+    } catch (error) {
+      setError(error.message);
+      setIsLoadingReport(false);
+    }
+  };
+
+
+
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+  const renderPagination = () => {
+    const pages = [];
+
+    for (let i = 1; i <= pageCount; i++) {
+      const isActive = i === currentPage;
+      pages.push(
+        <li key={i} className={`page-item ${isActive ? 'active' : ''}`}>
+          <button className="page-link" onClick={() => handlePageChange(i)}>
+            {i}
+          </button>
+        </li>
+      );
+    }
+
+    return (
+      <ul className="pagination">
+        <li className="page-item">
+          <button
+            className="page-link"
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+          >
+            Previous
+          </button>
+        </li>
+        {pages}
+        <li className="page-item">
+          <button
+            className="page-link"
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === pageCount}
+          >
+            Next
+          </button>
+        </li>
+      </ul>
+    );
+  };

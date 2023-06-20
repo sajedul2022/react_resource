@@ -1,0 +1,21 @@
+const generateRandomNumber = () => {
+    const min = 1000; // Minimum 4-digit number
+    const max = 9999; // Maximum 4-digit number
+    const randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
+    return randomNumber;
+  };
+
+ // const randomNumber = generateRandomNumber();
+
+// use
+
+const Randomuser_id = Number(randomNumber);
+
+
+
+
+or// random number
+
+           function newRandomNumber() {
+             return Math.floor(Math.random() * 999);
+          }

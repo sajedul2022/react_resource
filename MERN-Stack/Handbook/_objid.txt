@@ -1,0 +1,8 @@
+const ObjectID = require("mongodb").ObjectID;
+
+  // Integrator Endpoint for Game Aggregator communication
+  router.post('/callback/datas', async(req, res) => {
+
+    const { currency, player_id, session_id, action } = req.body; 
+    const userObjectID = new ObjectID(player_id);
+});

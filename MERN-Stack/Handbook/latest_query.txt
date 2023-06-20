@@ -1,0 +1,47 @@
+
+//  latest 
+
+async function getAgent ()
+  {
+  try {
+  const Agents = await Agent.find().sort({_id:-1}).limit(1);
+  console.log(Agents);
+  } catch (error) {
+  console.log(error.message);
+  }
+  }
+   getAgent();
+
+
+
+
+or 
+
+FOR LAST QUERY FROM MONGO
+
+// Assuming you have set up your Express.js server and connected to MongoDB
+
+app.get('/last-row', (req, res) => {
+  // Access the MongoDB collection
+  const collection = db.collection('myCollection');
+
+  // Query to retrieve the last document
+  collection
+    .find({})
+    .sort({ _id: -1 })
+    .limit(1)
+    .toArray((err, result) => {
+      if (err) {
+        console.error('Failed to execute the query:', err);
+        return res.status(500).send('Failed to execute the query');
+      }
+
+      // Process the last document
+      if (result.length > 0) {
+        const lastRow = result[0];
+        res.send(lastRow);
+      } else {
+        res.send('No documents found.');
+      }
+    });
+});
